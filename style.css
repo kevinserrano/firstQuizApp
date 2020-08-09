@@ -3,3 +3,11 @@
     margin-left: 10%;
     text-align: center;
 }
+
+.ansButtons {
+    background-color: purple;
+    display: block;
+    margin-left: 33.33%;
+    margin-top: 2%;
+
+}
