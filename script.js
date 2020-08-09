@@ -15,20 +15,20 @@ generateBtn.addEventListener("click", strtQuiz);
 
 var qzQuestion = [{
     question: " What do if and else statements always evaluate to?",
-    questionOptions: "",
-    answer: 1,
+    questionOptions: ["always false", "always true", "true or false depending on statement", "undefined"],
+    answer: 2,
 }, {
     question: " What are the 3 building blocks of the internet?",
-    questionOptions: "",
+    questionOptions: ["legos, logs, popsicle sticks", "HTML, CSS, JavaScript", "ice, wind, fire", "coffee, energy drinks, mountain dew"],
     answer: 1,
 }, {
     question: " What type of language is JavaScript?",
-    questionOptions: "",
-    answer: 1,
+    questionOptions: ["spanish", "frustrating", "pig-latin", "dynamic"],
+    answer: 3,
 }, {
     question: " What does var do?",
-    questionOptions: "",
-    answer: 1,
+    questionOptions: ["declares a variable", "declares a war", "declares and eclair", "declares mistakes were made"],
+    answer: 0,
 }]
 
 
