@@ -14,7 +14,7 @@ generateBtn.addEventListener("click", strtQuiz);
 
 
 var qzQuestion = [{
-    question: " What do if and else statements always evaluate to?",
+    question: " What do 'if' and 'else' statements always evaluate to?",
     questionOptions: ["always false", "always true", "true or false depending on statement", "undefined"],
     answer: 2,
 }, {
@@ -29,20 +29,30 @@ var qzQuestion = [{
     question: " What does var do?",
     questionOptions: ["declares a variable", "declares a war", "declares and eclair", "declares mistakes were made"],
     answer: 0,
-}]
+}];
 
-userAns;
-correctAns;
-incorrectAns;
-finalScore;
-
-
-
-
-funtion strtQuiz() {
-
-    document.body.
+var userAns;
+var correctAns;
+var incorrectAns;
+var finalScore;
+var replaceItem = document.querySelector("#para");
 
 
+function strtQuiz() {
+
+
+    //1st question needs to populate with possible answers
+
+    document.getElementById("para").innerHTML = qzQuestion[0].question;
+    var btn = document.getElementById("clicker");
+    var optionText = [qzQuestion[0].questionOptions[0], qzQuestion[0].questionOptions[1], qzQuestion[0].questionOptions[2], qzQuestion[0].questionOptions[3]]
+
+    for (var i = 0; i < 4; i++) {
+        var option = document.createElement("button");
+        option.className = "ansButtons";
+        option.innerHTML = optionText[i];
+        document.body.appendChild(option);
+
+    }
 
 }
