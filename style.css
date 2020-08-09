@@ -1,5 +1,5 @@
 .container {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 10%;
     text-align: center;
 }
@@ -7,7 +7,16 @@
 .ansButtons {
     background-color: purple;
     display: block;
-    margin-left: 33.33%;
+    margin-left: 40%;
     margin-top: 2%;
+    color: thistle;
+    width: 25%;
 
+
+}
+
+#para {
+    font-family: cursive;
+    font-size: x-large;
+    color: slateblue;
 }
