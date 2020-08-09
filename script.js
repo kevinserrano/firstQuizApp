@@ -41,11 +41,8 @@ finalScore;
 
 funtion strtQuiz() {
 
-    var qzQuestion = generateQuestion();
-
-}
+    document.body.
 
 
-function generateQuestion() {
 
 }
