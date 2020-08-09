@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", strtQuiz);
 
 var qzQuestion = [{
     question: " What do 'if' and 'else' statements always evaluate to?",
-    questionOptions: ["always false", "always true", "true or false depending on statement", "undefined"],
+    questionOptions: ["A) always false", "B) always true", "C) true or false depending on statement", "D) undefined"],
     answer: 2,
 }, {
     question: " What are the 3 building blocks of the internet?",
@@ -39,20 +39,17 @@ var replaceItem = document.querySelector("#para");
 
 
 function strtQuiz() {
-
-
-    //1st question needs to populate with possible answers
-
     document.getElementById("para").innerHTML = qzQuestion[0].question;
     var btn = document.getElementById("clicker");
     var optionText = [qzQuestion[0].questionOptions[0], qzQuestion[0].questionOptions[1], qzQuestion[0].questionOptions[2], qzQuestion[0].questionOptions[3]]
-
+    btn.parentNode.removeChild(btn);
     for (var i = 0; i < 4; i++) {
         var option = document.createElement("button");
-        option.className = "ansButtons";
+        option.className = "btn btn-primary ansButtons";
+        option.id = "choice" + i;
+        option.value = i;
         option.innerHTML = optionText[i];
         document.body.appendChild(option);
 
     }
-
 }
