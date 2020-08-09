@@ -31,7 +31,10 @@ var qzQuestion = [{
     answer: 0,
 }]
 
-
+userAns;
+correctAns;
+incorrectAns;
+finalScore;
 
 
 
@@ -39,8 +42,7 @@ var qzQuestion = [{
 funtion strtQuiz() {
 
     var qzQuestion = generateQuestion();
-    var qzAns;
-    var userResult;
+
 }
 
 
