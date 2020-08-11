@@ -28,15 +28,16 @@ var qzQuestion = [{
     questionOptions: ["declares a variable", "declares a war", "declares and eclair", "declares mistakes were made"],
     answer: 0,
 }];
-
+var timeEl = document.querySelector(".time");
+var mainEl = document.getElementById("container");
 var questionNum = 0;
 var finalScore = 0;
 var replaceItem = document.querySelector("#para");
-var secondsOnTimer = 59;
+var secondsOnTimer = 3;
 // function call to 1st question with answer
 function strtQuiz() {
     // TODO : add timer
-    var timeEl = document.querySelector(".time");
+
 
 
     function setTime() {
@@ -50,6 +51,17 @@ function strtQuiz() {
             }
 
         }, 1000);
+    }
+
+    function provideInfo() {
+        timeEl.textContent = " ";
+
+        var finalPopUp = document.createElement("<form>");
+
+        finalPopUp.setAttribute("<form>");
+
+        mainEl.appendChild(finalPopUp);
+
     }
     setTime()
 
@@ -105,3 +117,4 @@ function updateQuestions() {
 }
 // when quiz is over promps the users score and a place for them to enter initials
 // TODO: pop up form to check score and add initials
+var finalPopUp = document.createElement("<form>");
