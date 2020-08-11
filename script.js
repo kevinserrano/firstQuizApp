@@ -32,10 +32,26 @@ var qzQuestion = [{
 var questionNum = 0;
 var finalScore = 0;
 var replaceItem = document.querySelector("#para");
-
+var secondsOnTimer = 59;
 // function call to 1st question with answer
 function strtQuiz() {
     // TODO : add timer
+    var timeEl = document.querySelector(".time");
+
+
+    function setTime() {
+        var timerInterval = setInterval(function () {
+            secondsOnTimer--;
+            timeEl.textContent = secondsOnTimer + " seconds remaining";
+
+            if (secondsOnTimer === 0) {
+                clearInterval(timerInterval);
+                provideInfo();
+            }
+
+        }, 1000);
+    }
+    setTime()
 
     // grab paragraph div and set to question 1
     document.getElementById("para").innerHTML = qzQuestion[0].question;
