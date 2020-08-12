@@ -33,7 +33,7 @@ var mainEl = document.getElementById("container");
 var questionNum = 0;
 var finalScore = 0;
 var replaceItem = document.querySelector("#para");
-var secondsOnTimer = 3;
+var secondsOnTimer = 60;
 // function call to 1st question with answer
 function strtQuiz() {
     // TODO : add timer
@@ -92,18 +92,25 @@ function strtQuiz() {
 }
 // calling next function to update and eval questions
 function secondPart() {
-    //TODO: find if this is the final question
-
     if (event.target.value == qzQuestion[questionNum].answer) {
         finalScore++;
         console.log("correct");
     } else {
-        //TODO : decrease timer
+        //decrease timer
+        secondsOnTimer = secondsOnTimer - 5;
     }
-    // when function is done this increments the question number
-    questionNum++;
 
-    updateQuestions();
+    //find if this is the final question
+    if (questionNum === qzQuestion.length) {
+        finalForm();
+    } else {
+        // when function is done this increments the question number
+        questionNum++;
+        updateQuestions();
+    }
+
+
+
 }
 // this updates all text based on question number
 function updateQuestions() {
@@ -117,4 +124,6 @@ function updateQuestions() {
 }
 // when quiz is over promps the users score and a place for them to enter initials
 // TODO: pop up form to check score and add initials
-var finalPopUp = document.createElement("<form>");
+function finalForm() {
+    console.log("final");
+}
