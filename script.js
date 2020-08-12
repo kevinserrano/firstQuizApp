@@ -34,14 +34,16 @@ var questionNum = 0;
 var finalScore = 0;
 var replaceItem = document.querySelector("#para");
 var secondsOnTimer = 60;
+var timerInterval;
+
 // function call to 1st question with answer
 function strtQuiz() {
-    // TODO : add timer
+    //add timer
 
 
 
     function setTime() {
-        var timerInterval = setInterval(function () {
+        timerInterval = setInterval(function () {
             secondsOnTimer--;
             timeEl.textContent = secondsOnTimer + " seconds remaining";
 
@@ -53,16 +55,7 @@ function strtQuiz() {
         }, 1000);
     }
 
-    function provideInfo() {
-        timeEl.textContent = " ";
 
-        var finalPopUp = document.createElement("<form>");
-
-        finalPopUp.setAttribute("<form>");
-
-        mainEl.appendChild(finalPopUp);
-
-    }
     setTime()
 
     // grab paragraph div and set to question 1
@@ -75,11 +68,12 @@ function strtQuiz() {
     //loop creating answer buttons
     for (var i = 0; i < 4; i++) {
         var option = document.createElement("button");
+        option.setAttribute("style", "background-color: purple; display: block; margin: auto; margin-top: 2%; color: thistle; width: 25%;");
         option.className = "btn btn-primary ansButtons";
         option.id = "choice" + i;
         option.value = i;
         option.innerHTML = optionText[i];
-        document.body.appendChild(option);
+        mainEl.appendChild(option);
 
     }
     // adding event listeners to new buttons
@@ -101,16 +95,15 @@ function secondPart() {
     }
 
     //find if this is the final question
-    if (questionNum === qzQuestion.length) {
-        finalForm();
+    if (questionNum === qzQuestion.length - 1) {
+        clearInterval(timerInterval);
+        provideInfo();
+        console.log("last question");
     } else {
         // when function is done this increments the question number
         questionNum++;
         updateQuestions();
     }
-
-
-
 }
 // this updates all text based on question number
 function updateQuestions() {
@@ -124,6 +117,34 @@ function updateQuestions() {
 }
 // when quiz is over promps the users score and a place for them to enter initials
 // TODO: pop up form to check score and add initials
-function finalForm() {
-    console.log("final");
+
+
+function provideInfo() {
+    timeEl.textContent = " ";
+
+    var finalPopUp = document.createElement("form");
+    finalPopUp.setAttribute("type", "form");
+    finalPopUp.setAttribute("style", "background-color: red; width: 100px");
+
+    var formLabel = document.createElement("label");
+    formLabel.innerHTML = "Initials";
+
+    var formInput = document.createElement("input");
+    formInput.setAttribute("type", "text");
+
+    var newButton = document.createElement("button");
+    newButton.innerHTML = "Submit";
+
+    var displayFinalScore = document.createElement("div");
+    displayFinalScore.innerHTML = "You got " + finalScore + " out of " + qzQuestion.length + " correct";
+
+    mainEl.parentNode.replaceChild(displayFinalScore, mainEl);
+    displayFinalScore.appendChild(finalPopUp);
+    finalPopUp.appendChild(formLabel);
+    finalPopUp.appendChild(formInput);
+    finalPopUp.appendChild(newButton);
+
+    //TODO: leaderboard tracker
+
+
 }
