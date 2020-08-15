@@ -17,7 +17,7 @@ var qzQuestion = [{
     answer: 3,
 }, {
     question: " What does var do?",
-    questionOptions: ["declares a variable", "declares a war", "declares an eclair", "declares mistakes were made"],
+    questionOptions: ["declares a variable", "declares a war", "declares an                                                                           eclair", "declares mistakes were made"],
     answer: 0,
 }];
 var timeEl = document.querySelector(".time");
@@ -75,10 +75,11 @@ function strtQuiz() {
 function secondPart() {
     if (event.target.value == qzQuestion[questionNum].answer) {
         finalScore++;
+        questionNum++;
         console.log("correct");
     } else {
         //decrease timer
-        secondsOnTimer = secondsOnTimer - 5;
+        secondsOnTimer = secondsOnTimer - 10;
     }
 
     //find if this is the final question
@@ -88,7 +89,7 @@ function secondPart() {
         console.log("last question");
     } else {
         // when function is done this increments the question number  
-        questionNum++;
+        //questionNum++;
         updateQuestions();
     }
 }
