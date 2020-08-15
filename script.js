@@ -17,7 +17,7 @@ var qzQuestion = [{
     answer: 3,
 }, {
     question: " What does var do?",
-    questionOptions: ["declares a variable", "declares a war", "declares and eclair", "declares mistakes were made"],
+    questionOptions: ["declares a variable", "declares a war", "declares an eclair", "declares mistakes were made"],
     answer: 0,
 }];
 var timeEl = document.querySelector(".time");
