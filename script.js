@@ -2,14 +2,6 @@
 var generateBtn = document.querySelector(".btn-primary");
 generateBtn.addEventListener("click", strtQuiz);
 
-
-
-
-
-
-
-
-
 //make vars for questions, answers, correct, wrong, final score
 var qzQuestion = [{
     question: " What do 'if' and 'else' statements always evaluate to?",
@@ -39,9 +31,6 @@ var timerInterval;
 // function call to 1st question with answer
 function strtQuiz() {
     //add timer
-
-
-
     function setTime() {
         timerInterval = setInterval(function () {
             secondsOnTimer--;
@@ -54,7 +43,6 @@ function strtQuiz() {
 
         }, 1000);
     }
-
 
     setTime()
 
@@ -82,7 +70,6 @@ function strtQuiz() {
     document.getElementById("choice2").addEventListener("click", secondPart);
     document.getElementById("choice3").addEventListener("click", secondPart);
 
-
 }
 // calling next function to update and eval questions
 function secondPart() {
@@ -100,7 +87,7 @@ function secondPart() {
         provideInfo();
         console.log("last question");
     } else {
-        // when function is done this increments the question number
+        // when function is done this increments the question number  
         questionNum++;
         updateQuestions();
     }
@@ -116,7 +103,7 @@ function updateQuestions() {
 
 }
 // when quiz is over promps the users score and a place for them to enter initials
-// TODO: pop up form to check score and add initials
+//pop up form to check score and add initials
 
 
 function provideInfo() {
@@ -124,7 +111,7 @@ function provideInfo() {
 
     var finalPopUp = document.createElement("form");
     finalPopUp.setAttribute("type", "form");
-    finalPopUp.setAttribute("style", "background-color: red; width: 100px");
+    finalPopUp.setAttribute("style", "color: purple; margin-left: 33.33%");
 
     var formLabel = document.createElement("label");
     formLabel.innerHTML = "Initials";
@@ -132,11 +119,15 @@ function provideInfo() {
     var formInput = document.createElement("input");
     formInput.setAttribute("type", "text");
 
+
     var newButton = document.createElement("button");
     newButton.innerHTML = "Submit";
 
+
+
     var displayFinalScore = document.createElement("div");
     displayFinalScore.innerHTML = "You got " + finalScore + " out of " + qzQuestion.length + " correct";
+    displayFinalScore.setAttribute("style", "color: purple; margin-left: 33.33%");
 
     mainEl.parentNode.replaceChild(displayFinalScore, mainEl);
     displayFinalScore.appendChild(finalPopUp);
@@ -145,6 +136,8 @@ function provideInfo() {
     finalPopUp.appendChild(newButton);
 
     //TODO: leaderboard tracker
+
+
 
 
 }
