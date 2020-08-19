@@ -9,15 +9,15 @@ var qzQuestion = [{
     answer: 2,
 }, {
     question: " What are the 3 building blocks of the internet?",
-    questionOptions: ["legos, logs, popsicle sticks", "HTML, CSS, JavaScript", "ice, wind, fire", "coffee, energy drinks, mountain dew"],
+    questionOptions: ["A) legos, logs, popsicle sticks", "B) HTML, CSS, JavaScript", "C) ice, wind, fire", "D) coffee, energy drinks, mountain dew"],
     answer: 1,
 }, {
     question: " What type of language is JavaScript?",
-    questionOptions: ["spanish", "frustrating", "pig-latin", "dynamic"],
+    questionOptions: ["A) spanish", "B) frustrating", "C) pig-latin", "D) dynamic"],
     answer: 3,
 }, {
     question: " What does var do?",
-    questionOptions: ["declares a variable", "declares a war", "declares an                                                                           eclair", "declares mistakes were made"],
+    questionOptions: ["A) declares a variable", "B) declares a war", "C) declares an eclair", "D) declares mistakes were made"],
     answer: 0,
 }];
 var timeEl = document.querySelector(".time");
@@ -77,19 +77,20 @@ function secondPart() {
         finalScore++;
         questionNum++;
         console.log("correct");
+
     } else {
         //decrease timer
         secondsOnTimer = secondsOnTimer - 10;
     }
 
     //find if this is the final question
-    if (questionNum === qzQuestion.length - 1) {
+    if (questionNum === qzQuestion.length) {
         clearInterval(timerInterval);
         provideInfo();
         console.log("last question");
     } else {
         // when function is done this increments the question number  
-        //questionNum++;
+
         updateQuestions();
     }
 }
