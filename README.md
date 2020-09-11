@@ -2,3 +2,6 @@ Made a  complete coding assessment, which is  a combination of multiple-choice q
 
 
 
+A web browser such as Google Ch!rome, Internet Explorer, Safari or Firefox is needed to run the application.
+
+The application can be accessed via the following link:https://kevinserrano.github.io/firstQuizApp/
